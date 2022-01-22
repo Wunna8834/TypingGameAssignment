@@ -1,0 +1,26 @@
+*{
+  margin-left: 5px;
+}
+.highlight {
+    background-color: yellow;
+  }
+  
+  .error {
+    background-color: lightcoral;
+    border: red;
+  }
+
+  #quote {
+    display: none;
+    width: 60%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding-left: 6px;
+    padding-top: 0.5rem;
+  }
+
+  #score {
+    font-size: 32px;
+    color: red;
+  }
