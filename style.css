@@ -1,6 +1,14 @@
 *{
   margin-left: 5px;
 }
+
+body {
+  background: #FFEEAD;
+}
+
+.instruction {
+  font-size: 20px;
+}
 .highlight {
     background-color: yellow;
   }
@@ -11,9 +19,8 @@
   }
 
   #quote {
+    width: 60%;
     display: none;
-    /* width: 60%;
-    height: 40px; */
     box-sizing: border-box;
     border: 1px solid black;
     padding-left: 6px;
@@ -21,6 +28,6 @@
   }
 
   #score {
-    font-size: 32px;
-    color: red;
+    font-size: 20px;
+    color: #655D8A;
   }
