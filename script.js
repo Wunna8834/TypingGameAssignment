@@ -4,11 +4,11 @@ const typeValueElement = document.getElementById("typed-value");
 const displayHighScore = document.getElementById("score");
 
 
-window.onload = function () {
-  displayHighScore.innerHTML = `High Score: ${localStorage.getItem(
-    "High Score"
-  )}`;
-};
+// window.onload = function () {
+//   displayHighScore.innerHTML = `High Score: ${localStorage.getItem(
+//     "High Score"
+//   )}`;
+// };
 
 const quotes = [
   "When you have eliminated all the impossible, whatever remains, however impossible, must be truth.",
@@ -30,6 +30,7 @@ document.getElementById("start").addEventListener("click", () => {
   messageElement.innerText = "";
   wordIndex = 0;
   quoteElement.childNodes[0].className = "highlight";
+  typeValueElement.disabled = false;
   typeValueElement.focus();
   startTime = new Date().getTime();
 });
@@ -51,7 +52,7 @@ typeValueElement.addEventListener("input", () => {
     let message = `Congratuation. You finished the project in ${duration} seconds.`;
     messageElement.innerText = message;
     typeValueElement.value = "";
-    typeValueElement.style = "display:none";
+    typeValueElement.disabled = true;
 
     // Review correction
     if (bestScore > duration) {
@@ -59,17 +60,7 @@ typeValueElement.addEventListener("input", () => {
       window.localStorage.setItem("High Score", `${bestScore}`);
     }
     displayHighScore.innerText = `High Score: ${bestScore}`;
-    //
-
-    // Original Code
-    // let highScore = `${duration}`;
-    // let myHighScore = JSON.stringify(highScore);
-    // localStorage.setItem("High Score", myHighScore);
-    // // console.log(localStorage);
-    // let getHighScore = JSON.parse(localStorage.getItem("High Score"));
-
-    // displayHighScore.innerText = `High Score: ${getHighScore}`;
-    // End of original code
+   
   } else if (currentWord.startsWith(typeValue)) {
     typeValueElement.className = "";
   } else {
